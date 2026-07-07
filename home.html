@@ -17,9 +17,10 @@
     }
     *, *::before, *::after { box-sizing: border-box; }
     html, body { margin:0; padding:0; background:#17181c; }
-    ::selection { background:#f4f2ec; color:#17181c; }
+    ::selection { background:#17181c; color:#f4f2ec; }
     a { color: inherit; }
 
+    /* Nav */
     .nav-link {
       text-decoration: none;
       display: inline-block;
@@ -39,42 +40,53 @@
     }
     .nav-contact:hover { background: #2E5C8A; border-color: #2E5C8A; color: #f4f2ec; }
 
-    .btn-light {
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 16px 30px;
-      background: #f4f2ec;
-      color: #17181c;
-      border-radius: 2px;
-      transition: background 0.25s ease;
-    }
+    /* Hero buttons */
+    .btn-light { text-decoration:none; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; padding:16px 30px; background:#f4f2ec; color:#17181c; border-radius:2px; transition:background 0.25s ease; }
     .btn-light:hover { background: #d9d7cc; }
-    .btn-text {
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      border-bottom: 1px solid rgba(244,242,236,0.4);
-      padding-bottom: 4px;
-      transition: color 0.25s ease, border-color 0.25s ease;
-    }
+    .btn-text { text-decoration:none; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; border-bottom:1px solid rgba(244,242,236,0.4); padding-bottom:4px; transition:color 0.25s ease, border-color 0.25s ease; }
     .btn-text:hover { color: #6E93B8; border-bottom-color: #6E93B8; }
+
+    /* Section links */
+    .sec-link { text-decoration:none; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; border-bottom:1px solid rgba(244,242,236,0.4); padding-bottom:4px; transition:color 0.25s ease, border-color 0.25s ease; white-space:nowrap; }
+    .sec-link:hover { color: #6E93B8; border-bottom-color: #6E93B8; }
+
+    /* Portfolio teaser cells */
+    .port-cell { background:#101114; padding:32px 24px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; min-height:120px; transition:background 0.3s ease; cursor:default; }
+    .port-cell:hover { background: #181a29; }
+    .port-cell-name { font-family:'Newsreader',serif; font-style:italic; font-size:19px; color:rgba(244,242,236,0.72); transition:color 0.3s ease; }
+    .port-cell:hover .port-cell-name { color: rgba(244,242,236,1); }
+
+    /* Team photo */
+    .photo-inner { width:100%; height:100%; background:repeating-linear-gradient(135deg, #3a3d33, #3a3d33 10px, #6b6f5c 10px, #6b6f5c 20px); display:flex; align-items:center; justify-content:center; filter:grayscale(1); transition:filter 0.5s ease; }
+    .photo-inner:hover { filter: grayscale(0); }
+
+    /* News */
+    .news-link { text-decoration:none; color:#f4f2ec; display:flex; align-items:baseline; justify-content:space-between; gap:40px; padding:28px 0; border-top:1px solid rgba(244,242,236,0.16); transition:color 0.25s ease; }
+    .news-link:hover { color: #6E93B8; }
+
+    /* Footer links */
+    .footer-link { text-decoration:none; color:inherit; transition:color 0.25s ease; }
+    .footer-link:hover { color: #6E93B8; }
+
+    /* Contact button */
+    .btn-contact { text-decoration:none; color:#f4f2ec; background:#2E5C8A; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; padding:18px 34px; border-radius:2px; white-space:nowrap; transition:background 0.25s ease; }
+    .btn-contact:hover { background: #3D719E; }
+
+    /* Terminal */
+    .terminal-wrap { border:1px solid rgba(244,242,236,0.14); border-radius:6px; overflow:hidden; background:#0d0e11; cursor:text; }
+    .terminal-input { flex:1; background:transparent; border:none; outline:none; font-family:'IBM Plex Mono',monospace; font-size:14px; color:#f4f2ec; caret-color:#6E93B8; }
   </style>
 </head>
 <body>
-<div style="width:100%; min-height:100vh; background:#17181c; color:#f4f2ec; font-family:-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif; position:relative; display:flex; flex-direction:column;">
+<div style="width:100%; position:relative; font-family:-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif; background:#17181c;">
 
-  <div style="position:absolute; inset:0; background:repeating-linear-gradient(0deg, rgba(244,242,236,0.012) 0px, rgba(244,242,236,0.012) 1px, transparent 1px, transparent 3px); pointer-events:none; z-index:60;"></div>
-
-  <!-- NAV -->
-  <div style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:76px; background:rgba(23,24,28,0.9); backdrop-filter:blur(8px); border-bottom:1px solid rgba(244,242,236,0.1);">
+  <!-- NAV (fixed) -->
+  <div style="position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:76px; background:rgba(23,24,28,0.9); backdrop-filter:blur(8px); border-bottom:1px solid rgba(244,242,236,0.1);">
     <a href="index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:#f4f2ec;">
       <img src="assets/logo-rabbit.png" alt="White Rabbit" style="width:20px; height:auto; display:block;">
       <span style="font-family:'Newsreader',serif; font-size:16px; letter-spacing:0.28em; font-weight:500;">WHITE RABBIT</span>
     </a>
-    <div style="display:flex; align-items:center; gap:40px; font-size:12px; letter-spacing:0.14em; text-transform:uppercase;">
+    <div style="display:flex; align-items:center; gap:40px; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#f4f2ec;">
       <a href="portfolio.html" class="nav-link">Portfolio</a>
       <a href="team.html" class="nav-link">Our Team</a>
       <a href="approach.html" class="nav-link">Approach</a>
@@ -84,7 +96,7 @@
   </div>
 
   <!-- HERO -->
-  <div style="flex:1; padding:48px; max-width:1120px; margin:0 auto; display:flex; flex-direction:column; justify-content:center; gap:36px; width:100%;">
+  <div style="min-height:100vh; width:100%; padding:120px 48px 48px; max-width:1120px; margin:0 auto; display:flex; flex-direction:column; justify-content:center; gap:36px; color:#f4f2ec;">
     <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#6E93B8;">// Operator-led venture capital</div>
     <h1 style="margin:0; font-family:'Newsreader',serif; font-weight:500; font-size:clamp(44px,6vw,84px); line-height:1.05; letter-spacing:-0.01em; max-width:1000px;">
       We back founders who have<br>lived the problem they're solving<span style="font-style:italic; color:#9c9a90;">.</span>
@@ -98,6 +110,214 @@
     </div>
   </div>
 
+  <!-- APPROACH TEASER -->
+  <div style="max-width:1120px; margin:0 auto; padding:140px 48px; color:#f4f2ec;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:40px; margin-bottom:72px;">
+      <h2 style="margin:0; font-family:'Newsreader',serif; font-weight:500; font-size:clamp(32px,3.6vw,48px);">Our approach</h2>
+      <a href="approach.html" class="sec-link" style="color:#f4f2ec;">Read more &#8594;</a>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:56px;">
+      <div style="border-top:1px solid rgba(244,242,236,0.16); padding-top:28px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.06em; color:#6E93B8; margin-bottom:18px;">01 //</div>
+        <h3 style="margin:0 0 14px; font-family:'Newsreader',serif; font-weight:500; font-size:22px;">Operator-led</h3>
+        <p style="margin:0; font-size:15.5px; line-height:1.65; color:#c9c7bd;">Every partner has built, shipped, or defended security products at scale — we've sat in the founder's seat.</p>
+      </div>
+      <div style="border-top:1px solid rgba(244,242,236,0.16); padding-top:28px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.06em; color:#6E93B8; margin-bottom:18px;">02 //</div>
+        <h3 style="margin:0 0 14px; font-family:'Newsreader',serif; font-weight:500; font-size:22px;">Security-native</h3>
+        <p style="margin:0; font-size:15.5px; line-height:1.65; color:#c9c7bd;">We invest exclusively in cybersecurity — deep networks across CISOs, red teams, and enterprise buyers.</p>
+      </div>
+      <div style="border-top:1px solid rgba(244,242,236,0.16); padding-top:28px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.06em; color:#6E93B8; margin-bottom:18px;">03 //</div>
+        <h3 style="margin:0 0 14px; font-family:'Newsreader',serif; font-weight:500; font-size:22px;">Long-term partners</h3>
+        <p style="margin:0; font-size:15.5px; line-height:1.65; color:#c9c7bd;">We stay close from seed through scale, not just at the boardroom table but in the trenches.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS STRIP -->
+  <div style="border-top:1px solid rgba(244,242,236,0.1); border-bottom:1px solid rgba(244,242,236,0.1); background:#1e2025; color:#f4f2ec;">
+    <div style="max-width:1120px; margin:0 auto; padding:44px 48px; display:grid; grid-template-columns:repeat(4,1fr); gap:32px;">
+      <div>
+        <div style="font-family:'Newsreader',serif; font-size:38px; font-weight:500;">2015</div>
+        <div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#9c9a90; margin-top:6px;">Founded</div>
+      </div>
+      <div>
+        <div style="font-family:'Newsreader',serif; font-size:38px; font-weight:500;">40+</div>
+        <div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#9c9a90; margin-top:6px;">Portfolio companies</div>
+      </div>
+      <div>
+        <div style="font-family:'Newsreader',serif; font-size:38px; font-weight:500;">$400M</div>
+        <div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#9c9a90; margin-top:6px;">Assets under management</div>
+      </div>
+      <div>
+        <div style="font-family:'Newsreader',serif; font-size:38px; font-weight:500;">Seed &#8211; A</div>
+        <div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#9c9a90; margin-top:6px;">Stage focus</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO TEASER -->
+  <div style="background:#101114; color:#f4f2ec; padding:140px 48px;">
+    <div style="max-width:1120px; margin:0 auto;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:40px; margin-bottom:64px;">
+        <h2 style="margin:0; font-family:'Newsreader',serif; font-weight:500; font-size:clamp(32px,3.6vw,48px);">Portfolio</h2>
+        <a href="portfolio.html" class="sec-link" style="color:#f4f2ec;">View all &#8594;</a>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(244,242,236,0.1);">
+        <div class="port-cell"><span class="port-cell-name">Aegis</span><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(110,147,184,0.7);">Cloud Security</span></div>
+        <div class="port-cell"><span class="port-cell-name">Vantage</span><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(110,147,184,0.7);">Identity</span></div>
+        <div class="port-cell"><span class="port-cell-name">Nullpoint</span><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(110,147,184,0.7);">Threat Intel</span></div>
+        <div class="port-cell"><span class="port-cell-name">Ironward</span><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(110,147,184,0.7);">AppSec</span></div>
+        <div class="port-cell"><span class="port-cell-name">Cipherline</span><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(110,147,184,0.7);">Data Security</span></div>
+        <div class="port-cell"><span class="port-cell-name">Redshift</span><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(110,147,184,0.7);">Detection</span></div>
+        <div class="port-cell"><span class="port-cell-name">Fathom</span><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(110,147,184,0.7);">GRC</span></div>
+        <div class="port-cell"><span class="port-cell-name">Sentry Labs</span><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(110,147,184,0.7);">Network</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEAM TEASER -->
+  <div style="max-width:1120px; margin:0 auto; padding:140px 48px; color:#f4f2ec;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:40px; margin-bottom:64px;">
+      <h2 style="margin:0; font-family:'Newsreader',serif; font-weight:500; font-size:clamp(32px,3.6vw,48px);">Team</h2>
+      <a href="team.html" class="sec-link" style="color:#f4f2ec;">Meet everyone &#8594;</a>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:36px;">
+      <div>
+        <div style="aspect-ratio:4/5; overflow:hidden; margin-bottom:16px;">
+          <div class="photo-inner"><span style="font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:11px; letter-spacing:0.06em; color:rgba(23,24,28,0.6);">PHOTO</span></div>
+        </div>
+        <div style="font-family:'Newsreader',serif; font-size:18px; font-weight:500;">Caleb Sima</div>
+        <div style="font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:#9c9a90; margin-top:4px;">Partner</div>
+      </div>
+      <div>
+        <div style="aspect-ratio:4/5; overflow:hidden; margin-bottom:16px;">
+          <div class="photo-inner"><span style="font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:11px; letter-spacing:0.06em; color:rgba(23,24,28,0.6);">PHOTO</span></div>
+        </div>
+        <div style="font-family:'Newsreader',serif; font-size:18px; font-weight:500;">Nir Polak</div>
+        <div style="font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:#9c9a90; margin-top:4px;">Partner</div>
+      </div>
+      <div>
+        <div style="aspect-ratio:4/5; overflow:hidden; margin-bottom:16px;">
+          <div class="photo-inner"><span style="font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:11px; letter-spacing:0.06em; color:rgba(23,24,28,0.6);">PHOTO</span></div>
+        </div>
+        <div style="font-family:'Newsreader',serif; font-size:18px; font-weight:500;">Tyson Kopczynski</div>
+        <div style="font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:#9c9a90; margin-top:4px;">Operating Partner</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <div style="border-top:1px solid rgba(244,242,236,0.1); background:#1e2025; color:#f4f2ec;">
+    <div style="max-width:1120px; margin:0 auto; padding:140px 48px;">
+      <h2 style="margin:0 0 64px; font-family:'Newsreader',serif; font-weight:500; font-size:clamp(32px,3.6vw,48px);">Latest</h2>
+      <div style="display:flex; flex-direction:column;">
+        <a href="#" class="news-link">
+          <span style="font-family:'Newsreader',serif; font-style:italic; font-size:21px; max-width:700px;">White Rabbit closes Fund III to back the next wave of security founders</span>
+          <span style="font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9c9a90; white-space:nowrap;">Jun 2026</span>
+        </a>
+        <a href="#" class="news-link">
+          <span style="font-family:'Newsreader',serif; font-style:italic; font-size:21px; max-width:700px;">Why operator-led investing matters more in cybersecurity than anywhere else</span>
+          <span style="font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9c9a90; white-space:nowrap;">Apr 2026</span>
+        </a>
+        <a href="#" class="news-link">
+          <span style="font-family:'Newsreader',serif; font-style:italic; font-size:21px; max-width:700px;">Portfolio company Aegis raises Series A led by White Rabbit</span>
+          <span style="font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9c9a90; white-space:nowrap;">Feb 2026</span>
+        </a>
+        <div style="border-top:1px solid rgba(244,242,236,0.16);"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT / FOOTER -->
+  <div id="contact" style="background:#101114; color:#f4f2ec; padding:120px 48px 56px;">
+    <div style="max-width:1120px; margin:0 auto;">
+
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:40px; flex-wrap:wrap; padding-bottom:80px; border-bottom:1px solid rgba(244,242,236,0.16);">
+        <h2 style="margin:0; font-family:'Newsreader',serif; font-weight:500; font-size:clamp(30px,4vw,52px); max-width:640px;">Building something founders shouldn't have to explain twice<span style="font-style:italic; color:rgba(244,242,236,0.55);">?</span></h2>
+        <a href="mailto:hello@wr.vc" class="btn-contact">Get in touch</a>
+      </div>
+
+      <!-- TERMINAL -->
+      <div style="padding:64px 0 48px;">
+        <p style="margin:0 0 28px; font-size:15.5px; line-height:1.6; color:#c9c7bd;">Founding something in cybersecurity? <a href="mailto:hello@wr.vc" style="color:#6E93B8; text-decoration:none;">hello@wr.vc</a> &#8212; or use the prompt.</p>
+        <div class="terminal-wrap" onclick="document.getElementById('term-input').focus()">
+          <div style="display:flex; align-items:center; gap:8px; padding:12px 16px; border-bottom:1px solid rgba(244,242,236,0.1); background:#15161a;">
+            <span style="width:10px; height:10px; border-radius:50%; background:#3a3c42; display:inline-block;"></span>
+            <span style="width:10px; height:10px; border-radius:50%; background:#3a3c42; display:inline-block;"></span>
+            <span style="width:10px; height:10px; border-radius:50%; background:#3a3c42; display:inline-block;"></span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#8f8d84; margin-left:8px;">founder@wr.vc &#8212; ssh &#8212; 80x24</span>
+          </div>
+          <div style="padding:22px 24px; min-height:150px; font-family:'IBM Plex Mono',monospace; font-size:14px; line-height:1.85; color:#c9c7bd;">
+            <div>connection established. you're at the bottom of the rabbit hole.</div>
+            <div>type <span style="color:#6E93B8; font-weight:500;">help</span> to look around.</div>
+            <div id="term-history"></div>
+            <div style="display:flex; align-items:center; gap:8px; margin-top:10px;">
+              <span style="color:#d98a5f;">wr&gt;</span>
+              <input id="term-input" class="terminal-input" spellcheck="false" autocomplete="off" placeholder="">
+            </div>
+          </div>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.04em; color:rgba(244,242,236,0.35); margin-top:14px;">&#9656; TRY: help &middot; thesis &middot; operators &middot; portfolio &middot; contact</div>
+      </div>
+
+      <!-- QUOTE -->
+      <div style="padding:56px 0 88px; text-align:center;">
+        <p style="margin:0 0 20px; font-family:'IBM Plex Mono',monospace; font-size:16px; line-height:1.9; color:#9c9a90; max-width:760px; margin-left:auto; margin-right:auto;">"The world isn't run by weapons anymore, or energy, or money. It's run by little ones and zeroes, little bits of data. It's all just electrons."</p>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:rgba(244,242,236,0.35);">&#8212; Sneakers, 1992</div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:40px; flex-wrap:wrap; gap:20px; border-top:1px solid rgba(244,242,236,0.16);">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <img src="assets/logo-rabbit.png" alt="White Rabbit" style="width:16px; height:auto; display:block;">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em; color:rgba(244,242,236,0.5);">&copy; 2026 WHITE RABBIT // VENTURES</span>
+        </div>
+        <div style="display:flex; gap:32px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(244,242,236,0.7);">
+          <a href="team.html" class="footer-link">Team</a>
+          <a href="portfolio.html" class="footer-link">Portfolio</a>
+          <a href="#" class="footer-link">LinkedIn</a>
+          <a href="#" class="footer-link">X</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
+
+<script>
+  const responses = {
+    help: 'available: help, thesis, operators, portfolio, contact',
+    thesis: 'operator-led, security-native, long-term partners.\nsee the full approach → approach.html',
+    operators: 'caleb sima, nir polak, tyson kopczynski, and more.\nmeet the team → team.html',
+    portfolio: '40+ companies, seed to series a.\nview all → portfolio.html',
+    contact: 'hello@wr.vc'
+  };
+
+  const input = document.getElementById('term-input');
+  const history = document.getElementById('term-history');
+
+  input.addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter') return;
+    const raw = input.value.trim();
+    if (!raw) return;
+    const cmd = raw.toLowerCase();
+    const output = responses[cmd] || 'command not found: ' + raw + '. type help.';
+
+    const cmdLine = document.createElement('div');
+    cmdLine.style.marginTop = '10px';
+    cmdLine.innerHTML = '<span style="color:#d98a5f;">wr&gt;</span> ' + raw;
+
+    const outLine = document.createElement('div');
+    outLine.style.color = '#9c9a90';
+    outLine.style.whiteSpace = 'pre-wrap';
+    outLine.textContent = output;
+
+    history.appendChild(cmdLine);
+    history.appendChild(outLine);
+    input.value = '';
+    input.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+</script>
 </body>
 </html>
